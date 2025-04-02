@@ -1,0 +1,6 @@
+services:
+  curso-php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: php index.php IXCSoft
