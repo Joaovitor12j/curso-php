@@ -1,27 +1,27 @@
 
 # Linguagens compiladas VS Linguagens interpretadas
 
-- Diferença entre os tipos de linguagens
+- Diferenï¿½a entre os tipos de linguagens
 - Vantagens e desvantagens
 
-# História do PHP
+# HistÃ³ria do PHP
 
-- Evolução do PHP
+- Evoluï¿½ï¿½o do PHP
 
 # Containers
 
-- O que são containers
-- Características
+- O que sï¿½o containers
+- Caracterï¿½sticas
     - Isolados 
     - Leves
-    - Portáteis
+    - Portï¿½teis
     - Empacotamento 
 
 ## Docker
 
 - Construe, Distribui e executa containers
 - Principais vantagens
-    - Torna a tecnologia de containers acessível
+    - Torna a tecnologia de containers acessï¿½vel
     - Formato comum para empacotar e rodar apps
     - Ecossistema: Docker Compose, Docker Hub, comunidade ativa
-    - Revolucionou o ciclo Dev -> Teste -> produção (consistência e velocidade)
+    - Revolucionou o ciclo Dev -> Teste -> produï¿½ï¿½o (consistï¿½ncia e velocidade)

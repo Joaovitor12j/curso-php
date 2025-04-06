@@ -8,10 +8,12 @@ RUN curl -sL -o sury.sh https://packages.sury.org/php/README.txt \
   && sh sury.sh
 
 RUN apt-get install -y \
-    php7.4-cli
+    php7.4-cli \
+    php7.4-mysql \
+    php7.4-pdo \
+    php7.4-xml \
+    php7.4-mbstring
 
-WORKDIR /opt/project
-
-COPY index.php /opt/project/index.php
+WORKDIR /app
 
 ENTRYPOINT ["php", "index.php"]
