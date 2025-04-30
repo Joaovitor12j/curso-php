@@ -1,24 +1,39 @@
+# Usar uma imagem base leve e específica para a versão do Debian
 FROM debian:12-slim
 
+# Evitar prompts interativos durante a instalação
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
-    apt-get install -y \
-        curl \
-        ca-certificates \
-        gnupg2 \
-        lsb-release && \
-    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list && \
-    curl -fsSL https://packages.sury.org/php/apt.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/php.gpg && \
-    apt-get update && \
-    apt-get install -y php7.4-cli && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Instalar dependências básicas e repositório Sury para versões PHP
+RUN apt-get update \
+    && apt-get install -y \
+      curl \
+    && rm -rf /tmp/* /var/tmp/*
 
-COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+# Comando para instalar o php-cli
+RUN curl -sSLo sury.sh https://packages.sury.org/php/README.txt \
+  && chmod +x sury.sh \
+  && sh sury.sh \
+  && apt-get install --no-install-recommends and --no-install-suggests -y \
+      php7.4-cli \
+      php7.4-xdebug \
+  && apt-get clean  \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Comando para instalar o composer utilizando a imagem oficial do composer no docker hub
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+COPY dev.ini /etc/php/7.4/mods-available/dev.ini
+
+RUN phpenmod dev
+
+# Criar e configurar um usuário não root
 RUN groupadd --gid 1000 ixcsoft && \
     useradd --uid 1000 --gid ixcsoft --shell /bin/bash --create-home ixcsoft
 
+
+# Define o diretório de inicio de execução
 WORKDIR /opt/project
 
-#USER ixcsoft
+# Define o usuário padrão para execução dos scripts
+USER ixcsoft
