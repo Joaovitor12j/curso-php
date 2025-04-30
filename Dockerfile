@@ -1,7 +1,9 @@
 FROM debian:12-slim
 
 RUN apt-get update \
-    && apt-get install -y curl
+    && apt-get install -y curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL -o sury.sh https://packages.sury.org/php/README.txt \
   && chmod +x sury.sh \

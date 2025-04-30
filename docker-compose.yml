@@ -1,32 +1,22 @@
 services:
-  curso-php:
+  php-74-cli:
     build:
-      context: .
+      context: docker/php/74-cli
       dockerfile: Dockerfile
-    entrypoint: php index.php
     volumes:
-      - .:/app
-    networks:
-      - app-network
-    depends_on:
-      - db
-
-  db:
-    image: mysql:8.0
-    container_name: mysql_curso_php
-    environment:
-      MYSQL_ROOT_PASSWORD: Vitordev@123
-      MYSQL_DATABASE: curso_php
+      - .:/opt/project
+  php-74-fpm:
+    build:
+      context: docker/php/74-fpm
+      dockerfile: Dockerfile
+    volumes:
+      - .:/opt/project
+  nginx-php-74:
+    image: nginx
     ports:
-      - "3307:3306"
+      - "8080:80"
     volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - app-network
-
-volumes:
-  mysql_data:
-
-networks:
-  app-network:
-    driver: bridge
+      - .:/opt/project
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php-74-fpm
