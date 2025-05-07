@@ -5,26 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9efade26-1231-4f9c-b76f-60fa7db378f6" name="Changes" comment="feat(files): Update files&#10;&#10;Update files">
-      <change afterPath="$PROJECT_DIR$/bin/run.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/nginx/default.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/74-cli/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php/74-fpm/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ExampleInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Impl/Example.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/run_cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/run_notification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/run_order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/AbstractNotifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/EmailNotifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/OrderItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/ShoppingCart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/SmsNotifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Impl/UserService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NotifierInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aula-1/Resumo.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/aula-1/Resumo.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,28 +83,31 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2vBMCxDvr0tRFWfjGCAydYTb0y0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;aula-2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ixcsoft/GitProjects/curso-php&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "aula-4",
+    "last_opened_file_path": "/home/ixcsoft/GitProjects/curso-php",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ssh.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -120,8 +117,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.26053.13" />
-        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.26053.13" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.466" />
+        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.466" />
       </set>
     </attachedChunks>
   </component>
@@ -158,7 +155,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744219547044</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(files): Update files&#10;&#10;Update files">
+      <option name="closed" value="true" />
+      <created>1746018997176</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1746018997177</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(files): Update files&#10;&#10;Update files">
+      <option name="closed" value="true" />
+      <created>1746019006630</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746019006630</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
