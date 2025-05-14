@@ -1,18 +1,15 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+declare(strict_types=1);
 
-$message = 'Message';
+use App\AbstractFactory\Impl\Application;
+use App\AbstractFactory\Impl\DarkThemeFactory;
+use App\AbstractFactory\Impl\LightThemeFactory;
 
-?>
-<!DOCTYPE html>
-<html lang="pt_BR">
-<head>
-  <title>Teste PHP Docker</title>
-</head>
-<body>
-<h1><?php echo 'Put your code here!'; ?></h1>
-<p>Horário atual: <?php echo date('Y-m-d H:i:s'); ?></p>
-</body>
-</html>
+require __DIR__ . '/../vendor/autoload.php';
 
+$dark = new DarkThemeFactory();
+$light = new LightThemeFactory();
+$app = new Application($light);
+
+$app->render();
